@@ -1,0 +1,99 @@
+# ======================
+# Python
+# ======================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Python packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ======================
+# Environment / Secrets
+# ======================
+.env
+.env.*
+!.env.example
+
+# API keys / credentials
+*.pem
+*.key
+secrets/
+credentials/
+
+# ======================
+# Logs
+# ======================
+*.log
+logs/
+
+# ======================
+# Databases
+# ======================
+*.db
+*.sqlite
+*.sqlite3
+
+# ======================
+# MT5 / Trading Data
+# ======================
+# Terminal data
+terminal/
+terminals/
+mt5_data/
+
+# Historical market data
+data/
+*.csv
+*.json
+
+# Tick recordings / replays
+ticks/
+replays/
+captures/
+
+# ======================
+# IDEs
+# ======================
+.vscode/
+.idea/
+
+# ======================
+# OS files
+# ======================
+.DS_Store
+Thumbs.db
+
+# ======================
+# Temporary files
+# ======================
+tmp/
+temp/
+*.tmp
+
+# ======================
+# Jupyter
+# ======================
+.ipynb_checkpoints/
+
+# ======================
+# Testing / Coverage
+# ======================
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ======================
+# Compiled
+# ======================
+*.so
+*.dll
