@@ -20,7 +20,7 @@ from __future__ import annotations
 
 import asyncio
 import struct
-from datetime import datetime
+from datetime import datetime, timezone
 
 from decoder import decode_tick
 from envelope import EventEnvelope
@@ -54,6 +54,7 @@ market_state = MarketStateEngine()
 bus.subscribe(
     TickObserved,
     store.on_tick,
+    receive_envelope=True,
 )
 
 bus.subscribe(
@@ -108,7 +109,7 @@ async def handle_client(
             envelope = EventEnvelope(
                 event=event,
                 payload=payload,
-                received_at=datetime.utcnow(),
+                received_at=datetime.now(timezone.utc),
                 size=len(payload),
             )
 

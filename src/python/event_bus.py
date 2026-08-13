@@ -63,11 +63,15 @@ class EventBus:
 
         for handler, receive_envelope in handlers:
 
-            if receive_envelope:
-                handler(envelope)
-
-            else:
-                handler(event)
+            try:
+                if receive_envelope:
+                    handler(envelope)
+                else:
+                    handler(event)
+            except Exception as exc:
+                # A subscriber bug must not drop the MT5 connection.
+                name = getattr(handler, "__qualname__", repr(handler))
+                print(f"EventBus handler error in {name}: {exc}")
 
 
     def clear(self):
