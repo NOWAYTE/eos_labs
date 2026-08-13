@@ -9,13 +9,19 @@ It is the continuously updated state of a symbol that
 analytical engines can read.
 """
 
-from dataclasses import dataclass, field
 from collections import deque
 from datetime import datetime
+from dataclasses import dataclass, field
 
 
 @dataclass
 class MarketState:
+    """Mutable, reconstructable state for one symbol.
+
+    The deques contain only values derived from ``TickObserved`` in event
+    order. They intentionally use exchange timestamps rather than process
+    clock time, allowing replay to reproduce the same state.
+    """
 
     symbol: str
 
@@ -34,8 +40,8 @@ class MarketState:
 
     last_update: datetime | None = None
 
-    spreads: deque = field(default_factory=lambda: deque(maxlen=100))
+    spreads: deque[float] = field(default_factory=deque)
 
-    mids: deque = field(default_factory=lambda: deque(maxlen=100))
+    mids: deque[float] = field(default_factory=deque)
 
-    timestamps: deque = field(default_factory=lambda: deque(maxlen=100))
+    timestamps: deque[float] = field(default_factory=deque)

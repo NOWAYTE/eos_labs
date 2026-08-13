@@ -1,0 +1,19 @@
+{
+  "model_version": "EconomicModelV1",
+  "ppe_threshold": 0.75,
+  "lambda_cost_uncertainty": 2.0,
+  "gamma_edge_uncertainty": 1.5,
+  "edge_cost_correlation": 0.0,
+  "spread_cost_fraction": 0.5,
+  "slippage_cost_bps": 0.0,
+  "fee_cost_bps": 0.0,
+  "cost_uncertainty_bps": 0.0,
+  "include_market_impact": false,
+  "max_signal_age_ms": 500,
+  "minimum_nev_bps": 0.0,
+  "prototype_edge_enabled": false,
+  "prototype_expected_edge_bps": null,
+  "prototype_edge_uncertainty_bps": null,
+  "prototype_horizon_ms": 500,
+  "prototype_direction": null
+}

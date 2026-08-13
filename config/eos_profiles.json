@@ -1,0 +1,27 @@
+{
+  "research": {
+    "mode": "research",
+    "gateway_host": "127.0.0.1",
+    "gateway_port": 5555,
+    "economic_config": "economic_engine.json",
+    "execution_enabled": false,
+    "account_state_required": false
+  },
+  "paper": {
+    "mode": "paper",
+    "gateway_host": "127.0.0.1",
+    "gateway_port": 5555,
+    "economic_config": "economic_engine.json",
+    "execution_enabled": false,
+    "account_state_required": true
+  },
+  "live": {
+    "mode": "live",
+    "gateway_host": "127.0.0.1",
+    "gateway_port": 5555,
+    "economic_config": "economic_engine.json",
+    "execution_enabled": false,
+    "account_state_required": true,
+    "live_execution_acknowledged": false
+  }
+}

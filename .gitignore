@@ -55,6 +55,7 @@ mt5_data/
 data/
 *.csv
 *.json
+!config/*.json
 
 # Tick recordings / replays
 ticks/

@@ -117,7 +117,7 @@ start_gateway() {
     nohup env \
         PYTHONUNBUFFERED=1 \
         PYTHONPATH="$PYTHON_DIR${PYTHONPATH:+:$PYTHONPATH}" \
-        "$VENV_PYTHON" "$PYTHON_DIR/gateway.py" \
+        "$VENV_PYTHON" "$PYTHON_DIR/eos_app.py" --profile research \
         >>"$(log_file gateway)" 2>&1 &
 
     echo $! >"$(pid_file gateway)"
